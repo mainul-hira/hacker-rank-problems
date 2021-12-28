@@ -1,27 +1,15 @@
-import re
-
-# def create_combination(string):
-#     res = (string[i: j] for i in range(len(string))
-#             for j in range(i + 1, len(string) + 1))
-#     return res
-    
 def minion_game(string):
     vowel = ('A', 'E', 'I', 'O', 'U') # Kevin = Vowel
+    # vowel = 'AEIOU'
 
-    # all_words = create_combination(string)
-    # used_words = set()
     kevins_point, sturat_point = 0, 0
-    for idx, i in enumerate(string):
-        if i in vowel:
-            #used_words.add(i)
-            # kevins_point += len(re.findall(f'(?={i})',string))
-            kevins_point += len(string[idx:])-1
-            # print(counter[i])
-            print('kev', kevins_point)
+    # for idx, i in string time limit exceeded
+    for i in range(len(string)):
+        if string[i] in vowel:
+            kevins_point += len(string)-i
+            # kevins_point += len(string[idx:]) time limit exceeded
         else:
-            sturat_point += len(string[idx:])-1
-            # print('stu', sturat_point)
-    
+            sturat_point += len(string)-i
     if sturat_point>kevins_point:
         print(f"Stuart {sturat_point}")
     elif sturat_point==kevins_point:
