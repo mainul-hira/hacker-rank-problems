@@ -17,5 +17,4 @@ if __name__ == '__main__':
     set_a = set([int(y) for y in input().split()])
     set_b = set([int(y) for y in input().split()])
     # set_a = set(map(int, input().split()))
-    # set_b = set(map(int, input().split()))
     print(calculate_happiness(array_, set_a, set_b))
